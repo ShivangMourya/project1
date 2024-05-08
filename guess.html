@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="guess.css">
+</head>
+<body>
+    <div class="container">
+        <h3>Guess the Number Game</h3>
+        <div class="main">
+            <p>You Guess Number 1 to 10</p>
+            <div class="empty"></div>
+           
+            <label for="input"> Enter Text &nbsp; &nbsp; -- &nbsp;</label>
+            
+            <input type="text" required="" id="inpNum" >
+           <br>
+            <button onclick="GuessNumber()">
+                <span style="color: white;">GUESS NUM</span>
+              </button>
+              <div class="empty1"></div>
+              <h6 id="textcontent"></h6>
+        </div>
+        
+    </div>
+
+   <script>
+    let randomNumber = Math.floor(Math.random()*10)+1;
+    console.log(randomNumber);
+    let count=0;
+
+    function GuessNumber(){
+    let inputNum =  document.getElementbyid("inpNum").value;
+
+    if(inputNum <0||inputNum>10|| isNaN(inputNum))
+    {
+        alert("this is wrong Number:");
+        count++;
+    }
+    if(inputNum==randomNumber){
+    
+        document.getElementById('textcontent').innerHTML=`Congratulations! You guessed the correct number! with in : ${count} times and Computer Choose   :  ${randomNumber}`;
+        textcontent.style.color = 'green';
+        textcontent.style.backgroundColor = 'white';
+    }
+    else if( inputNum > randomNumber ) {
+                document.getElementById('textcontent').innerHTML = "Too high. Try again.";
+                textcontent.style.color = 'yellow';
+
+    }
+    else if( inputNum < randomNumber ) {
+               document.getElementById('textcontent').innerHTML = "Too low. Try again";
+               textcontent.style.color = 'yellow';
+              
+
+            }
+            if( count > 6){
+                 document.getElementById('textcontent').innerHTML ="Na Munna Na tumse na ho payega"
+                 textcontent.style.color = 'red';
+            }
+}
+   </script>
+   
+
+</body>
+</html>

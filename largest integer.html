@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = parseInt(prompt("Enter first number"));
+        let b = parseInt(prompt("Enter second number"));
+        let c = parseInt(prompt("Enter third number"));
+        let small,mid,large;
+        if (a > b && a > c) {
+            large = a
+            if (b > c) {
+                mid = b
+                small = c
+            }
+            else
+            mid = c
+                small = b
+        }
+        else if (b > a && b > c) {
+            large = b
+            if (a > c) {
+                mid = a
+            small = c
+            }
+            else
+            mid = c
+            small = a
+        }
+        else {
+            large = c
+            if (b > a) {
+                mid = b
+                small = a
+            }
+            else
+            mid = a
+        small = b
+        }
+        document.writeln(large + " , " + mid + " , " + small );
+    </script>
+</body>
+</html>
