@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bulb</title>
+    <style>
+        *{
+            /* background-image: url(red,orange); */
+            /* background: linear-gradient(white,orange); */
+        }
+    .container h1{
+    margin-left: 300px;
+    width: 100px;
+    }
+    .container{
+        margin-left: 400px;
+    }
+    .btn{
+        margin-left: 220px;
+    }
+    .btn button{
+        padding: 10px 30px;
+        border-radius: 20px;
+        background: linear-gradient(red,yellow);
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BULB</h1>
+        <img class="bulboff" src="https://img.freepik.com/free-vector/realistic-lit-light-bulb-isolated_1284-41774.jpg?t=st=1713940517~exp=1713941117~hmac=63ab33f658de326b1a55813e202fac50de86d3ca31c9f0b9e9036ec17e8db04f" alt="bulb off">
+        <div class="btn">
+            <button onclick="bulbOn()">ON</button>
+            <button  onclick="bulbOff()">OFF</button>
+
+        </div>
+    </div>
+
+    <script>
+        function bulbOn(){
+            var lightOn = document.querySelector(".bulboff");
+            lightOn.setAttribute("src","https://img.freepik.com/free-vector/realistic-lit-light-bulb-isolated_1284-41774.jpg?t=st=1713940517~exp=1713941117~hmac=63ab33f658de326b1a55813e202fac50de86d3ca31c9f0b9e9036ec17e8db04f");
+
+        }
+        function bulbOff(){
+            var lightOn = document.querySelector(".bulboff");
+            lightOn.setAttribute("src","https://img.freepik.com/free-vector/realistic-light-bulb-isolated_1284-41741.jpg");
+
+        }
+    </script>
+
+</body>
+</html>

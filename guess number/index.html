@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="guess.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h3>Guess the Number Game</h3>
+      <div class="main">
+        <p>You Guess Number 1 to 10</p>
+        <div class="empty"></div>
+
+        <label for="input"> Enter Text &nbsp; &nbsp; -- &nbsp;</label>
+
+        <input type="text" required="" id="inpNum" />
+        <br />
+        <button onclick="guessNumber()">
+          <span style="color: white">GUESS NUM</span>
+        </button>
+        <div class="empty1"></div>
+        <p id="textcontent"></p>
+      </div>
+    </div>
+
+    <script>
+      function guessNumber() {
+        let randomNumber = Math.floor(Math.random() * 10) + 1;
+        let text = document.getElementById("textcontent");
+        console.log(randomNumber);
+        let count = 0;
+
+        let inputNum = document.getElementById("inpNum").value;
+
+        if (inputNum == randomNumber) {
+          text.innerText = `Congratulations! You guessed the correct number! with in : ${count} times and Computer Choose   :  ${randomNumber}`;
+        //   textcontent.style.color = "green";
+        //   textcontent.style.backgroundColor = "white";
+        }
+        
+        else if (inputNum > randomNumber) {
+          text.innerHTML = "Too high. Try again.";
+        //   textcontent.style.color = "yellow";
+        }
+        
+        else if (inputNum < randomNumber) {
+          text.innerHTML = "Too low. Try again";
+        //   textcontent.style.color = "yellow";
+        }
+      
+    }
+    </script>
+  </body>
+</html>
